@@ -1,0 +1,93 @@
+<!-- add_patient.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add a Patient</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+
+    <nav class="navbar">
+        <ul class="nav-list">
+            <li class="nav-item"><a href="{{ url_for('index') }}">Home</a></li>
+            <li class="nav-item"><a href="{{ url_for('add_patient') }}">Add a Patient</a></li>
+            <li class="nav-item"><a href="{{ url_for('search_patient') }}">Search</a></li>
+            <li class="nav-item"><a href="{{ url_for('analytics') }}">Analytics</a></li>
+            {% if current_user.is_authenticated %}
+                <li class="nav-item"><a href="{{ url_for('logout') }}">Logout</a></li>
+            {% endif %}
+        </ul>
+    </nav>
+
+    <div class="main-content">
+        <h1>Healthcare Patient Registry</h1>
+
+        <div>
+            <h2>Add a Patient</h2>
+            <!-- The form remains the same as in the previous response -->
+<!-- add_patient.html -->
+
+<form method="POST" action="{{ url_for('add_patient') }}" style="max-width: 600px; margin: 20px auto; background-color: #fff; padding: 20px; border-radius: 5px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);">
+    <label for="name">Name:</label>
+    <input type="text" name="name" required style="width: 100%; padding: 8px; margin: 8px 0; box-sizing: border-box;">
+    <br>
+    <label for="age">Age:</label>
+    <input type="number" name="age" required style="width: 100%; padding: 8px; margin: 8px 0; box-sizing: border-box;">
+    <br>
+    <label for="gender">Gender:</label>
+    <input type="text" name="gender" style="width: 100%; padding: 8px; margin: 8px 0; box-sizing: border-box;">
+    <br>
+    <label for="email">Email:</label>
+    <input type="text" name="email" style="width: 100%; padding: 8px; margin: 8px 0; box-sizing: border-box;">
+    <br>
+    <label for="blood_type">Blood Type:</label>
+    <input type="text" name="blood_type" style="width: 100%; padding: 8px; margin: 8px 0; box-sizing: border-box;">
+    <br>
+    <label for="medical_condition">Medical Condition:</label>
+    <input type="text" name="medical_condition" style="width: 100%; padding: 8px; margin: 8px 0; box-sizing: border-box;">
+    <br>
+    <label for="date_of_admission">Date of Admission:</label>
+    <input type="text" name="date_of_admission" style="width: 100%; padding: 8px; margin: 8px 0; box-sizing: border-box;">
+    <br>
+    <label for="doctor">Doctor:</label>
+    <input type="text" name="doctor" style="width: 100%; padding: 8px; margin: 8px 0; box-sizing: border-box;">
+    <br>
+    <label for="hospital">Hospital:</label>
+    <input type="text" name="hospital" style="width: 100%; padding: 8px; margin: 8px 0; box-sizing: border-box;">
+    <br>
+    <label for="insurance_provider">Insurance Provider:</label>
+    <input type="text" name="insurance_provider" style="width: 100%; padding: 8px; margin: 8px 0; box-sizing: border-box;">
+    <br>
+    <label for="billing_amount">Billing Amount:</label>
+    <input type="number" name="billing_amount" style="width: 100%; padding: 8px; margin: 8px 0; box-sizing: border-box;">
+    <br>
+    <label for="room_number">Room Number:</label>
+    <input type="text" name="room_number" style="width: 100%; padding: 8px; margin: 8px 0; box-sizing: border-box;">
+    <br>
+    <label for="admission_type">Admission Type:</label>
+    <input type="text" name="admission_type" style="width: 100%; padding: 8px; margin: 8px 0; box-sizing: border-box;">
+    <br>
+    <label for="discharge_date">Discharge Date:</label>
+    <input type="text" name="discharge_date" style="width: 100%; padding: 8px; margin: 8px 0; box-sizing: border-box;">
+    <br>
+    <label for="medication">Medication:</label>
+    <input type="text" name="medication" style="width: 100%; padding: 8px; margin: 8px 0; box-sizing: border-box;">
+    <br>
+    <label for="test_results">Test Results:</label>
+    <input type="text" name="test_results" style="width: 100%; padding: 8px; margin: 8px 0; box-sizing: border-box;">
+    <br>
+
+    <input type="submit" value="Add Patient" style="background-color: #4caf50; color: #fff; padding: 10px 15px; border: none; border-radius: 5px; cursor: pointer;">
+</form>
+
+            <br>
+            <a href="{{ url_for('index') }}" style="color: #4caf50; text-decoration: none;">Back to Patients List</a>
+        </div>
+    </div>
+
+</body>
+</html>

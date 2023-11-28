@@ -1,0 +1,43 @@
+<!-- index.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Healthcare Patient Registry</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+
+    <nav class="navbar">
+        <ul class="nav-list">
+            <li class="nav-item"><a href="{{ url_for('index') }}">Home</a></li>
+            <li class="nav-item"><a href="{{ url_for('add_patient') }}">Add a Patient</a></li>
+            <li class="nav-item"><a href="{{ url_for('search_patient') }}">Search</a></li>
+            <li class="nav-item"><a href="{{ url_for('analytics') }}">Analytics</a></li>
+            {% if current_user.is_authenticated %}
+                <li class="nav-item"><a href="{{ url_for('logout') }}">Logout</a></li>
+            {% endif %}
+        </ul>
+    </nav>
+
+    <div class="main-content">
+        <h1>Welcome to the Healthcare Patient Registry</h1>
+
+        <p>This is a central hub for managing healthcare patient records. Use the navigation bar to explore different functionalities.</p>
+
+        <h2>General Information</h2>
+
+        <p>This app:</p>
+        <ul class="centered-bullets">
+            <li>Collects, stores, and manages patient data</li>
+            <li>Allows you to input and update patient information</li>
+            <li>Enables searching and retrieval of patient data</li>
+            <li>Provides views of analytics, graphs, and reports</li>
+        </ul>
+    </div>
+
+</body>
+</html>

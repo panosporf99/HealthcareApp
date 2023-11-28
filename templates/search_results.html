@@ -1,0 +1,80 @@
+<!-- search_results.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Results</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+    <style>
+        table {
+            margin: auto;
+            width: 80%; /* Adjust the width as needed */
+            border-collapse: collapse;
+            margin-top: 20px; /* Add some top margin */
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #4caf50;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <ul class="nav-list">
+            <li class="nav-item"><a href="{{ url_for('index') }}">Home</a></li>
+            <li class="nav-item"><a href="{{ url_for('add_patient') }}">Add a Patient</a></li>
+            <li class="nav-item"><a href="{{ url_for('search_patient') }}">Search</a></li>
+            <li class="nav-item"><a href="{{ url_for('analytics') }}">Analytics</a></li>
+            {% if current_user.is_authenticated %}
+                <li class="nav-item"><a href="{{ url_for('logout') }}">Logout</a></li>
+            {% endif %}
+        </ul>
+    </nav>
+
+    <div class="main-content">
+        <h1>Search Results for "{{ search_query }}"</h1>
+
+        {% if patients %}
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Age</th>
+                        <th>Gender</th>
+                        <th>Blood Type</th>
+                        <!-- Add more columns as needed -->
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for patient in patients %}
+                        <tr>
+                            <td>{{ patient.id }}</td>
+                            <td>{{ patient.name }}</td>
+                            <td>{{ patient.age }}</td>
+                            <td>{{ patient.gender }}</td>
+                            <td>{{ patient.blood_type }}</td>
+                            <!-- Add more columns as needed -->
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        {% else %}
+            <p>No results found.</p>
+        {% endif %}
+
+    </div>
+
+</body>
+</html>

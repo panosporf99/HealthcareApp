@@ -1,0 +1,66 @@
+/* static/styles.css */
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar {
+    background-color: #4caf50;
+    padding: 10px;
+}
+
+.nav-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.nav-item {
+    display: inline;
+    margin-right: 20px;
+}
+
+.nav-item a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.main-content {
+    text-align: center;
+    padding: 20px;
+}
+
+h1, h2 {
+    color: #333;
+}
+
+.centered-bullets {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.centered-bullets li {
+    margin-bottom: 10px;
+}
+
+.main-content {
+    text-align: center;
+    padding: 20px;
+}
+
+h1 {
+    color: #333;
+}
+
+/* styles.css */
+
+
+/* static/styles.css */
+
+/* ... (existing styles) ... */
+

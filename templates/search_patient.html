@@ -1,0 +1,38 @@
+<!-- search_patient.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Patients</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+
+    <nav class="navbar">
+        <ul class="nav-list">
+            <li class="nav-item"><a href="{{ url_for('index') }}">Home</a></li>
+            <li class="nav-item"><a href="{{ url_for('add_patient') }}">Add a Patient</a></li>
+            <li class="nav-item"><a href="{{ url_for('search_patient') }}">Search</a></li>
+            <li class="nav-item"><a href="{{ url_for('analytics') }}">Analytics</a></li>
+            {% if current_user.is_authenticated %}
+            <li class="nav-item"><a href="{{ url_for('logout') }}">Logout</a></li>
+        {% endif %}
+        </ul>
+    </nav>
+
+    <div class="main-content">
+        <h1>Search Patients</h1>
+
+        <form action="{{ url_for('search_results') }}" method="post">
+            <label for="search_query">Search by Name or ID:</label>
+            <input type="text" id="search_query" name="search_query" required>
+            <button type="submit">Search</button>
+        </form>
+
+    </div>
+
+</body>
+</html>
